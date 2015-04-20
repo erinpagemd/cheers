@@ -1,3 +1,5 @@
+require 'date'
+
 puts 'Enter your name'
 
 name = gets.chomp
@@ -27,3 +29,13 @@ end
 
 message = name.upcase + "'s just GRAND!"
 puts message
+
+puts "Hey, #{name}, what's your birthday?"
+
+birthday = gets
+birthday = Date.parse(birthday)
+today = Date.today
+diff = birthday - today
+days_until = diff % 365
+
+puts "Awesome! Your birthday is in #{days_until} days! Happy Birthday in advance!"
